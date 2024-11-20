@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BMI Calculator</title>
+<style>
+    /* General reset and font */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #c0f0a9;
+    }
+    .container {
+        width: 400px;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: #ffffff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #333;
+        font-size: 2em;
+    }
+    .input-group {
+        margin: 10px 0;
+    }
+    label {
+        font-size: 1em;
+        color: #555;
+    }
+    input {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    #result {
+        margin-top: 20px;
+        font-size: 1.2em;
+        color: #007BFF;
+        text-align: center;
+    }
+    /* Buttons style */
+    .button-group {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+    button {
+        padding: 10px 20px;
+        font-size: 1em;
+        color: #fff;
+        background-color: #007BFF;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    button:hover {
+        background-color: #0056b3;
+    }
+    .clear-button {
+        background-color: #6c757d;
+    }
+    .clear-button:hover {
+        background-color: #5a6268;
+    }
+    .stop-button {
+        background-color: #dc3545;
+    }
+    .stop-button:hover {
+        background-color: #c82333;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>BMI Calculator</h1>
+    <div class="input-group">
+        <label for="weight">Weight (kg):</label>
+        <input type="number" id="weight" placeholder="Enter your weight">
+    </div>
+    <div class="input-group">
+        <label for="height">Height (m):</label>
+        <input type="number" id="height" placeholder="Enter your height">
+    </div>
+    <div id="result">Your BMI will appear here.</div>
+
+    <div class="button-group">
+        <button onclick="calculateBMI()">Calculate</button>
+        <button class="clear-button" onclick="clearFields()">Clear</button>
+        <button class="stop-button" onclick="closeApp()">Stop</button>
+    </div>
+</div>
+
+<!-- <script>
+    function calculateBMI() {
+        const weight = parseFloat(document.getElementById('weight').value);
+        const height = parseFloat(document.getElementById('height').value);
+
+        if (isNaN(weight) || isNaN(height) || weight <= 0 || height <= 0) {
+            document.getElementById('result').innerText = "Please enter valid positive values!";
+            return;
+        }
+
+        const bmi = weight / (height ** 2);
+        let category;
+        if (bmi < 18.5) category = "Underweight";
+        else if (bmi < 24.9) category = "Normal weight";
+        else if (bmi < 29.9) category = "Overweight";
+        else category = "Obese";
+
+        document.getElementById('result').innerText = `BMI: ${bmi.toFixed(2)} (${category})`;
+    }
+
+    function clearFields() {
+        document.getElementById('weight').value = '';
+        document.getElementById('height').value = '';
+        document.getElementById('result').innerText = 'Your BMI will appear here.';
+    }
+
+    function closeApp() {
+        document.getElementById('result').innerText = 'Application stopped.';
+    }
+</script> -->
+
+</body>
+</html>
